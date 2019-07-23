@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<br><br><br><br><br>
+
+<center><h1> SIGN UP </h1></center>
+
+  <form action="{{ url_for('users.register') }}" method="post">
+
+      {{ form.csrf_token }}
+
+      <div>
+          <label for="email">Email:</label>
+      {{ form.email(placeholder="Email Adress", class="form-control") }} <br>
+      </div>
+
+      <div> 
+          <label for="name">Name:</label>
+      {{ form.name(placeholder="Full Name", class="form-control") }} <br>
+      </div>
+
+      <div>
+          <label for="password">Password:</label>
+      {{ form.password(placeholder="Password", class="form-control" ) }} <br>
+      </div>
+
+      <div>
+          <label for="confirm">Confirm Password:</label>
+      {{ form.confirm(placeholder="Confirm Password", class="form-control") }} <br>
+      </div>
+    </div>
+    <div>
+      <button type="submit" action="{{url_for('set_up.html')}}" >Register User</button>
+    </div>
+  </form>
+
+  {% block content %}
+  {% endblock %}
