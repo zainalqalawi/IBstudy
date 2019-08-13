@@ -66,27 +66,8 @@ def home():
     user=get_user(login_session['name'])
     id_num = user.id
     sched = get_sched(id_num)
-    week = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    s_list = [sched.s1, sched.s2, sched.s3, sched.s4, sched.s5, sched.s6]
-    i = 0
-    sb=[]
-
-    if sched.real_time > 2 or sched.real_time == 2:
-        i = 3
-    elif sched.real_time < 2 and sched.real_time > 0:
-        i = 2
-
-    for w in week:
-        if i == 3:
-            sb.append([w,random.choice(s_list),random.choice(s_list),random.choice(s_list)])
-            
-        elif i == 2:
-            sb.append([w,random.choice(s_list),random.choice(s_list)])
-            
-        else:
-            break
-
-    return render_template("home.html", sched=sb)
+    
+    return render_template("home.html", sched=sched)
 
 @app.route("/setting")
 def settings():

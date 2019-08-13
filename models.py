@@ -37,7 +37,58 @@ class Sched(Base):
     part_time               = Column(Integer)
     real_time               = Column(Integer)
 
-    
     def __repr__(self):
         return "Subjects: {} \n time:{} \n week: {}\n part_time {}".format(self.subjects, self.time, self.week, self.part_time)
+
+class Sunday(Base):
+    __tablename__           = "Sunday"
+    id           			= Column(Integer, primary_key=True)
+    s1  	 			    = Column(String)
+    s2  	 			    = Column(String)
+    s3  	 			    = Column(String)
+
+class Monday(Base):
+    __tablename__           = "Monday"
+    id           			= Column(Integer, primary_key=True)
+    s1  	 			    = Column(String)
+    s2  	 			    = Column(String)
+    s3  	 			    = Column(String)
+
+class Tuesday(Base):
+    __tablename__           = "Tuesday"
+    id           			= Column(Integer, primary_key=True)
+    s1  	 			    = Column(String)
+    s2  	 			    = Column(String)
+    s3  	 			    = Column(String)
+
+class Wednesday(Base):
+    __tablename__           = "Wednesday"
+    id           			= Column(Integer, primary_key=True)
+    s1  	 			    = Column(String)
+    s2  	 			    = Column(String)
+    s3  	 			    = Column(String)
+
+class Thursday(Base):
+    __tablename__           = "Thursday"
+    id           			= Column(Integer, primary_key=True)
+    s1  	 			    = Column(String)
+    s2  	 			    = Column(String)
+    s3  	 			    = Column(String)
+
+class Friday(Base):
+    __tablename__           = "Friday"
+    id           			= Column(Integer, primary_key=True)
+    s1  	 			    = Column(String)
+    s2  	 			    = Column(String)
+    s3  	 			    = Column(String)
+
+class Saturday(Base):
+    __tablename__           = "Saturday"
+    id           			= Column(Integer, primary_key=True)
+    s1  	 			    = Column(String)
+    s2  	 			    = Column(String)
+    s3  	 			    = Column(String)
+
+    
+    
                     
