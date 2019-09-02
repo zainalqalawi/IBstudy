@@ -38,10 +38,12 @@ def signup():
 def logout():
     login_session['logged_in']= False
     return start()
-#### LOGIN END ####
+################
 
 
 
+
+### CREATE NEW SCHEDULE ###
 @app.route("/setup", methods =['GET', 'POST'])
 def setup():
     if request.method == 'GET':
@@ -59,8 +61,12 @@ def setup():
 
         create_sched(s, t)
         return start()
+############################
 
 
+
+
+#### LOGGED-IN USER ####
 @app.route("/home")
 def home():
     user=get_user(login_session['name'])
@@ -72,6 +78,9 @@ def home():
 @app.route("/setting")
 def settings():
     return render_template("settings")
+#########################
+
+
 
 
 if __name__ == '__main__':
