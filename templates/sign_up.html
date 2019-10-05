@@ -14,14 +14,18 @@
 
 <br><br><br><br><br>
 
-<h1> SIGN UP </h1>
 
-  <form action="{{ url_for('signup') }}" method="post">
-      <input type="text" name="username" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <button type="submit">Register User</button>
+<div class="w3-container" style="padding-bottom:32px;">
+    <div class="w3-content" style="max-width:700px">
+      <h1> SIGN UP </h1>
+      <form action="{{ url_for('signup') }}" method="post">
+          <p><input class="w3-input w3-padding-16 w3-border" type="text" name="username" placeholder="Username"></p>
+          <p><input class="w3-input w3-padding-16 w3-border" type="password" name="password" placeholder="Password"></p>
+          <p><button class="w3-button w3-black" type="submit">Register User</button></p>
+      </form>
+    </div>
+  </div>
 
-  </form>
 
  </body>
  </html>

@@ -11,17 +11,22 @@
     
 </head>
 <body>
-
-<form action="{{url_for('setup')}}" method="post">
-    <input type="text" name="s1" placeholder=" Group 1"><br>
-    <input type="text" name="s2" placeholder=" Group 2"><br>
-    <input type="text" name="s3" placeholder=" Group 3"><br>
-    <input type="text" name="s4" placeholder=" Group 4"><br>
-    <input type="text" name="s5" placeholder=" Group 5"><br>
-    <input type="text" name="s6" placeholder=" Group 6"><br>
-    <input type="text" name="time" placeholder="amount of time">
-    <button type="submit">Finish Setup</button>
-</form>
+    <br><br><br><br><br>
+    <div class="w3-container" style="padding-bottom:32px;">
+        <div class="w3-content" style="max-width:700px">
+          <h1>SETUP</h1>
+          <form action="{{url_for('setup')}}" method="post">
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 1"></p><br>
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s2" placeholder=" Group 2"></p><br>
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s3" placeholder=" Group 3"></p><br>
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s4" placeholder=" Group 4"></p><br>
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s5" placeholder=" Group 5"></p><br>
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s6" placeholder=" Group 6"></p><br>
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" name="time" placeholder="amount of time"></p>
+              <p><button class="w3-button w3-black" type="submit">Finish Setup</button></p>
+          </form>
+        </div>
+      </div>
 
 </body>
 </html>

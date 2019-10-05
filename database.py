@@ -1,15 +1,36 @@
+############### IMPORTS ##################################################
 from models import Base, User, Sched, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import random
-
-#### CREATE DATABASE ####
+###########################################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+############### CREATE DATABASE ###########################################
 engine = create_engine('sqlite:///project.db?check_same_thread=False')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-
-#### USER FUNCTIONS ####
+###########################################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+############### USER FUNCTIONS ############################################
 def create_user(username,secret_word):
     user = User(username=username)
     user.hash_password(secret_word)
@@ -21,12 +42,23 @@ def get_user(username):
 
 def get_user_id(id_num):
     return session.query(User).filter_by(id=id_num).first()
-    
+###########################################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# 
+############### SCHEDULE FUNCTIONS #########################################
 def create_sched(subjects, time):
-
+    #define part_time to insure amount of subjects nessecery daily
     part_time = 0
     t = int(time)
-    sb=[]
+    sb = []
 
     
     if t > 2 or t == 2:
@@ -45,7 +77,7 @@ def create_sched(subjects, time):
     s4 = subjects[3]
     s5 = subjects[4]
     s6 = subjects[5]
-
+    
     week = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 
@@ -60,13 +92,13 @@ def create_sched(subjects, time):
             break
 
     if i == 3:
-        sun = Sunday(s1= sb[0][1], s2= sb[0][2], s3=[0][3])
-        mon = Monday(s1= sb[1][1], s2= sb[1][2], s3=[1][3])
-        tues = Tuesday(s1= sb[2][1], s2= sb[2][2], s3=[2][3])
-        wed = Wednesday(s1= sb[3][1], s2= sb[3][2], s3=[3][3])
-        thur = Thursday(s1= sb[4][1], s2= sb[4][2], s3=[4][3])
-        fri = Friday(s1= sb[5][1], s2= sb[5][2], s3=[5][3])
-        sat = Saturday(s1= sb[6][1], s2= sb[6][2], s3=[6][3])
+        sun = Sunday(s1= sb[0][1], s2= sb[0][2], s3=sb[0][3])
+        mon = Monday(s1= sb[1][1], s2= sb[1][2], s3=sb[1][3])
+        tues = Tuesday(s1= sb[2][1], s2= sb[2][2], s3=sb[2][3])
+        wed = Wednesday(s1= sb[3][1], s2= sb[3][2], s3=sb[3][3])
+        thur = Thursday(s1= sb[4][1], s2= sb[4][2], s3=sb[4][3])
+        fri = Friday(s1= sb[5][1], s2= sb[5][2], s3=sb[5][3])
+        sat = Saturday(s1= sb[6][1], s2= sb[6][2], s3=sb[6][3])
     elif i == 2:
         sun = Sunday(s1= sb[0][1], s2= sb[0][2])
         mon = Monday(s1= sb[1][1], s2= sb[1][2])
@@ -76,9 +108,16 @@ def create_sched(subjects, time):
         fri = Friday(s1= sb[5][1], s2= sb[5][2])
         sat = Saturday(s1= sb[6][1], s2= sb[6][2])
 
-    
-    sched = Sched(s1=s1, s2=s2, s3=s3, s4=s4, s5=s5, s6=s6, time=part_time, real_time=t)
-    session.add(sched, sun, mon, tues, wed, thur, fri, sat)
+    sched = Sched(s1=s1, s2=s2, s3=s3, s4=s4, s5=s5, s6=s6, time=part_time, real_time=t, i=i)
+
+    session.add(sched)
+    session.add(sun)
+    session.add(mon)
+    session.add(tues)
+    session.add(wed)
+    session.add(thur)
+    session.add(fri)
+    session.add(sat)
     session.commit()
 
 def all_sched():
@@ -93,6 +132,9 @@ def get_sched(id_num):
     fri = session.query(Friday).filter_by(id=id_num).first()
     sat = session.query(Saturday).filter_by(id=id_num).first()
 
-    sched = [[sun], [mon], [tues], [wed], [thur], [fri], [sat]]
+    sched = [[sun.s1, sun.s2, sun.s3], [mon.s1, mon.s2, mon.s3], [tues.s1, tues.s2, tues.s3], 
+    [wed.s1, wed.s2, wed.s3], [thur.s1, thur.s2, thur.s3], [fri.s1, fri.s2, fri.s3], [sat.s1, 
+    sat.s2, sat.s3]]
 
     return sched
+###########################################################################

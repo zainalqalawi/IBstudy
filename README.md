@@ -1,6 +1,6 @@
 # CS Internal Assesment
 
-This is a my program with: Python, HTML, CSS, Flask, SQLAlchemy, Bootstrap, jQuery.
+This is a my program with: Python, HTML, CSS, Flask, SQLAlchemy.
 //
 ### IBstudy
 
@@ -9,10 +9,10 @@ This is a my program with: Python, HTML, CSS, Flask, SQLAlchemy, Bootstrap, jQue
 ### 1. Structure
 
 - project
-  - models.py: define your tables here
+  - models.py: database tables here
   - app.py: general views and routes here
   - database.py: functionality with database
-  - static: static files in corresponding folder (css, js, img)
+  - static: static files in corresponding folder (css, img)
   - templates: HTML templates here
 
 ### 2. Run the server locally
@@ -23,4 +23,4 @@ python3 app.py
 
 ### 3. Heroku
 
-- will be uploaded to heroku
+- will be uploaded to heroku "Link soon"
