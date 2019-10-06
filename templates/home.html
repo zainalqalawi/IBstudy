@@ -1,56 +1,50 @@
 <html>
+  <head>
+    <title>IBstudy</title>
 
-<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='w3-style.css') }}">
 
-        <title>IBstudy</title>
-    
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='w3-style.css') }}">
-    
-        <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-</head>
-<body>
-    <!-- Navbar Content-->
-    <div class="w3-top">
-        <div class="w3-row w3-padding w3-black">
-            <div class="w3-col s3">
-            <a href="{{ url_for('home') }}" class="w3-button w3-block w3-black">HOME</a>
-            </div>
-            <div class="w3-col s3">
-            <a href="{{ url_for('settings') }}" class="w3-button w3-block w3-black">SETTINGS</a>
-            </div>
-            <div class="w3-col s3">
-            <a href="{{ url_for('logout') }}" class="w3-button w3-block w3-black">LOGOUT</a>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+    <body>
+        <!--Navbar Content-->
+        <div class="w3-top">
+            <div class="w3-row w3-padding w3-black">
+                <div class="w3-col s3">
+                <a href="{{ url_for('home') }}" class="w3-button w3-block w3-black">HOME</a>
+                </div>
+                <div class="w3-col s3">
+                <a href="{{ url_for('settings') }}" class="w3-button w3-block w3-black">SETTINGS</a>
+                </div>
+                <div class="w3-col s3">
+                <a href="{{ url_for('logout') }}" class="w3-button w3-block w3-black">LOGOUT</a>
+                </div>
             </div>
         </div>
-    </div>
-    <!------------------>
-
-    
-<br><br><br><br><br>
-
-    <table class="w3-table-all">
-        <thead>
+        <!------------------>
+        <br><br><br><br><br>
+        <!--DISPLAYS SCHEDULE-->
+        <table class="w3-table-all">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Subject 1</th>
+                    <th>Subject 2</th>
+                    {% if user_sched.i == 3 %}
+                    <th>Subject 3</th>
+                    {% endif %}
+                    <th>Time</th>
+                </tr>
+            </thead>
+            {% for day in sched %}
             <tr>
-                <th>Day</th>
-                <th>Subject 1</th>
-                <th>Subject 2</th>
-                {% if user_sched.i == 3 %}
-                <th>Subject 3</th>
-                {% endif %}
-                <th>Time</th>
+                {% for subject in day %}
+                <td> {{subject}} </td>
+                {% endfor %}
             </tr>
-        </thead>
-        {% for day in sched %}
-        <tr>
-            <td>DAY</td>
-            {% for subject in day %}
-            <td> {{subject}} </td>
             {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
-
-</body>
+        </table>
+        <!-------------------->
+    </body>
 </html>

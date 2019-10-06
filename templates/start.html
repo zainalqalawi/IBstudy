@@ -1,23 +1,18 @@
 <html>
+  <head>
+    <title>IBstudy</title>
 
-    <html>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='w3-style.css') }}">
 
-        <head>
-        
-                <title>IBstudy</title>
-            
-                <link rel=stylesheet type=text/css href="{{ url_for('static', filename='w3-style.css') }}">
-            
-                <meta charset="utf-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1">
-            
-        </head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
 
-<br><br><br><br><br>
-
+  <br><br><br><br><br>
+    <!--LOGIN FORM-->
     <div class="w3-container" style="padding-bottom:32px;">
-       <div class="w3-content" style="max-width:700px">
+        <div class="w3-content" style="max-width:700px">
           <h1> Login </h1>
           <form action="{{ url_for('login') }}" method="post">
               <p><input class="w3-input w3-padding-16 w3-border" type="text" name="username" placeholder="Username"></p>
@@ -28,5 +23,6 @@
           </form>
       </div>
     </div>
-</body>
-  </html>
+    <!-------------->
+  </body>
+</html>

@@ -117,7 +117,7 @@ def home():
     sched = get_sched(id_num)
     #gets current users subjects
     user_sched = session.query(Sched).filter_by(id=id_num).first()
-    
+    #returns variables to html file
     return render_template("home.html", sched=sched, user_sched=user_sched)
 
 @app.route("/setting")
