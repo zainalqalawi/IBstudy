@@ -17,6 +17,12 @@ This is a my program with: Python, HTML, CSS, Flask, SQLAlchemy.
 
 ### 2. Run the server locally
 
+in terminal activate virtual environment
+```
+source venv/bin/activate
+```
+
+then run the app,
 ```
 python3 app.py
 ```
