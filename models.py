@@ -83,12 +83,21 @@ class Sunday(Base):
     s2  	 			    = Column(String)
     s3  	 			    = Column(String)
 
+    def __repr__(self, s1='', s2='', s3=''):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
 class Monday(Base):
     __tablename__           = "Monday"
     id           			= Column(Integer, primary_key=True)
     s1  	 			    = Column(String)
     s2  	 			    = Column(String)
     s3  	 			    = Column(String)
+
+    def __repr__(self, s1='', s2='', s3=''):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
 
 class Tuesday(Base):
     __tablename__           = "Tuesday"
@@ -97,12 +106,22 @@ class Tuesday(Base):
     s2  	 			    = Column(String)
     s3  	 			    = Column(String)
 
+    def __repr__(self, s1='', s2='', s3=''):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
+
 class Wednesday(Base):
     __tablename__           = "Wednesday"
     id           			= Column(Integer, primary_key=True)
     s1  	 			    = Column(String)
     s2  	 			    = Column(String)
     s3  	 			    = Column(String)
+
+    def __repr__(self, s1='', s2='', s3=''):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
 
 class Thursday(Base):
     __tablename__           = "Thursday"
@@ -111,6 +130,11 @@ class Thursday(Base):
     s2  	 			    = Column(String)
     s3  	 			    = Column(String)
 
+    def __repr__(self, s1='', s2='', s3=''):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
+
 class Friday(Base):
     __tablename__           = "Friday"
     id           			= Column(Integer, primary_key=True)
@@ -118,10 +142,20 @@ class Friday(Base):
     s2  	 			    = Column(String)
     s3  	 			    = Column(String)
 
+    def __repr__(self, s1='', s2='', s3=''):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
+
 class Saturday(Base):
     __tablename__           = "Saturday"
     id           			= Column(Integer, primary_key=True)
     s1  	 			    = Column(String)
     s2  	 			    = Column(String)
     s3  	 			    = Column(String)
+
+    def __repr__(self, s1='', s2='', s3=''):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
 ###########################################################################         

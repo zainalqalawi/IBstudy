@@ -89,7 +89,12 @@ def setup():
 
     else:
         # Recieves form data for the schedule and creates a list of the subjects
-        s = [request.form['s1'],request.form['s2'],request.form['s3'],request.form['s4'],request.form['s5'],request.form['s6']]
+        s = [[request.form['s1'],request.form['level1'],request.form['score1'],request.form['priority1']],
+        [request.form['s2'],request.form['level2'],request.form['score2'],request.form['priority2']],
+        [request.form['s3'],request.form['level3'],request.form['score3'],request.form['priority3']],
+        [request.form['s4'],request.form['level4'],request.form['score4'],request.form['priority4']],
+        [request.form['s5'],request.form['level5'],request.form['score5'],request.form['priority5']],
+        [request.form['s6'],request.form['level6'],request.form['score6'],request.form['priority6']]]
         t = request.form.get('time', False)
 
         #calls function to create the schedule from database.py
