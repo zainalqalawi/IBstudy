@@ -109,8 +109,8 @@ def create_sched(subjects, time):
             break
     
     empty = []
-    #Sort arrays (High, med, low) according to time
 
+    #Sort arrays (High, med, low) according to time
     high = len(high_p) - 1
     med = len(med_p) - 1
     low = len(low_p) - 1
@@ -303,38 +303,6 @@ def create_sched(subjects, time):
         fri = Friday(s1= sb[10], s2= sb[11])
         sat = Saturday(s1= sb[12], s2= sb[13])
 
-
-    # #Creates a 2d array of all subjects in order of the schedule (List inside a list)
-    # week = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    
-    # for w in week:
-    #     if i == 3:
-    #         sb.append([w,random.choice(subjects),random.choice(subjects),random.choice(subjects)])
-            
-    #     elif i == 2:
-    #         sb.append([w,random.choice(subjects),random.choice(subjects)])
-            
-    #     else:
-    #         break
-    
-    #Creates an instance according to time (2 or one subject per day)
-    # if i == 3:
-    #     sun = Sunday(s1= sb[0][1], s2= sb[0][2], s3=sb[0][3])
-    #     mon = Monday(s1= sb[1][1], s2= sb[1][2], s3=sb[1][3])
-    #     tues = Tuesday(s1= sb[2][1], s2= sb[2][2], s3=sb[2][3])
-    #     wed = Wednesday(s1= sb[3][1], s2= sb[3][2], s3=sb[3][3])
-    #     thur = Thursday(s1= sb[4][1], s2= sb[4][2], s3=sb[4][3])
-    #     fri = Friday(s1= sb[5][1], s2= sb[5][2], s3=sb[5][3])
-    #     sat = Saturday(s1= sb[6][1], s2= sb[6][2], s3=sb[6][3])
-    # elif i == 2:
-    #     sun = Sunday(s1= sb[0][1], s2= sb[0][2])
-    #     mon = Monday(s1= sb[1][1], s2= sb[1][2])
-    #     tues = Tuesday(s1= sb[2][1], s2= sb[2][2])
-    #     wed = Wednesday(s1= sb[3][1], s2= sb[3][2])
-    #     thur = Thursday(s1= sb[4][1], s2= sb[4][2])
-    #     fri = Friday(s1= sb[5][1], s2= sb[5][2])
-    #     sat = Saturday(s1= sb[6][1], s2= sb[6][2])
-
     #creates an instance for the basic schedule
     sched = Sched(s1=s1[0], s2=s2[0], s3=s3[0], s4=s4[0], s5=s5[0], s6=s6[0], time=part_time, real_time=t, i=i)
 
@@ -348,6 +316,11 @@ def create_sched(subjects, time):
     session.add(fri)
     session.add(sat)
     session.commit()
+
+def randomize_sched(id_num):
+    sched = session.query(Sched).filter_by(id=id_num).first()
+
+    
 
 def all_sched():
     return session.query(Sched).all()
