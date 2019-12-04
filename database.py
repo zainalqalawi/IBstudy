@@ -319,8 +319,9 @@ def create_sched(subjects, time):
 
 def randomize_sched(id_num):
     sched = session.query(Sched).filter_by(id=id_num).first()
-
     
+    
+
 
 def all_sched():
     return session.query(Sched).all()

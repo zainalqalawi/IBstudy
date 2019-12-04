@@ -18,6 +18,7 @@
         <form action="{{ url_for('signup') }}" method="post">
             <p><input class="w3-input w3-padding-16 w3-border" type="text" name="username" placeholder="Username"></p>
             <p><input class="w3-input w3-padding-16 w3-border" type="password" name="password" placeholder="Password"></p>
+            <h6>Already have an account?</h6><a href="{{url_for('start')}}">Login</a>
             <p><button class="w3-button w3-black" type="submit">Register User</button></p>
         </form>
       </div>

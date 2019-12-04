@@ -12,123 +12,209 @@
       <!--SETUP FORM-->
       <div class="w3-container" style="padding-bottom:32px;">
           <div class="w3-content" style="max-width:700px">
-            <h1>SETUP</h1>
+            <h1>SCHEDULE SETUP</h1>
             <form action="{{url_for('setup')}}" method="post">
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 1" required></p>
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="level1" value="1" required>SL
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="level1" value="2" required>HL
-                  <p>score:
-                  <select class="w3-input w3-padding-16 w3-border" name="score1" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                  </select></p>
-                  <p>priority:
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority1" value="1" required>low
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority1" value="2" required>medium-low
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority1" value="3" required>medium-high
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority1" value="4" required>high</p><br>
 
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s2" placeholder=" Group 2 or other Group 1" required></p>
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level2" value="1" required>SL
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level2" value="2" required>HL
-                <p>score:
-                <select class="w3-input w3-padding-16 w3-border" name="score2" required>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                </select></p>
-                <p>priority:
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority2" value="1" required>low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority2" value="2" required>medium-low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority2" value="3" required>medium-high
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority2" value="4" required>high</p><br>
+                  <!--GROUP 1 INPUT-->
+                  <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 1" required></p>
+                  <div class="w3-row-padding">
+                    <div class="w3-third">
+                      <p>Subject Level: </p>
+                      <p><input class="w3-radio" type="radio" name="level1" value="1" required>SL</p>
+                      <p><input class="w3-radio" type="radio" name="level1" value="2" required>HL</p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Score: </p>
+                      <p><select class="w3-select" name="score1" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select></p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Priority: </p>
+                      <p><input class="w3-radio" type="radio" name="priority1" value="1" required>
+                      <label>Low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority1" value="2" required>
+                      <label>Medium-low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority1" value="3" required>
+                      <label>Medium-high</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority1" value="4" required>
+                      <label>High</label></p><br>
+                    </div>
+                  </div>
 
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s3" placeholder=" Group 3" required></p>
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level3" value="1" required>SL
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level3" value="2" required>HL
-                <p>score:
-                <select class="w3-input w3-padding-16 w3-border" name="score3" required>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                </select></p>
-                <p>priority:
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority3" value="1" required>low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority3" value="2" required>medium-low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority3" value="3" required>medium-high
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority3" value="4" required>high</p><br>
+                  <!--GROUP 2 INPUT-->
+                  <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 2" required></p>
+                  <div class="w3-row-padding">
+                    <div class="w3-third">
+                      <p>Subject Level: </p>
+                      <p><input class="w3-radio" type="radio" name="level2" value="1" required>SL</p>
+                      <p><input class="w3-radio" type="radio" name="level2" value="2" required>HL</p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Score: </p>
+                      <p><select class="w3-select" name="score2" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select></p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Priority: </p>
+                      <p><input class="w3-radio" type="radio" name="priority2" value="1" required>
+                      <label>Low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority2" value="2" required>
+                      <label>Medium-low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority2" value="3" required>
+                      <label>Medium-high</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority2" value="4" required>
+                      <label>High</label></p><br>
+                    </div>
+                  </div>
 
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s4" placeholder=" Group 4" required></p>
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level4" value="1" required>SL
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level4" value="2" required>HL
-                <p>score:
-                <select class="w3-input w3-padding-16 w3-border" name="score4" required>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                </select></p>
-                <p>priority:
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority4" value="1" required>low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority4" value="2" required>medium-low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority4" value="3" required>medium-high
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority4" value="4" required>high</p><br>
+                  <!--GROUP 3 INPUT-->
+                  <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 3" required></p>
+                  <div class="w3-row-padding">
+                    <div class="w3-third">
+                      <p>Subject Level: </p>
+                      <p><input class="w3-radio" type="radio" name="level3" value="1" required>SL</p>
+                      <p><input class="w3-radio" type="radio" name="level3" value="2" required>HL</p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Score: </p>
+                      <p><select class="w3-select" name="score3" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select></p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Priority: </p>
+                      <p><input class="w3-radio" type="radio" name="priority3" value="1" required>
+                      <label>Low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority3" value="2" required>
+                      <label>Medium-low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority3" value="3" required>
+                      <label>Medium-high</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority3" value="4" required>
+                      <label>High</label></p><br>
+                    </div>
+                  </div>
 
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s5" placeholder=" Group 5" required></p>
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level5" value="1" required>SL
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="level5" value="2" required>HL
-                <p>score:
-                <select class="w3-input w3-padding-16 w3-border" name="score5" required>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                </select></p>
-                <p>priority:
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority5" value="1" required>low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority5" value="2" required>medium-low
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority5" value="3" required>medium-high
-                <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority5" value="4" required>high</p><br>
+                  <!--GROUP 4 INPUT-->
+                  <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 4" required></p>
+                  <div class="w3-row-padding">
+                    <div class="w3-third">
+                      <p>Subject Level: </p>
+                      <p><input class="w3-radio" type="radio" name="level4" value="1" required>SL</p>
+                      <p><input class="w3-radio" type="radio" name="level4" value="2" required>HL</p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Score: </p>
+                      <p><select class="w3-select" name="score4" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select></p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Priority: </p>
+                      <p><input class="w3-radio" type="radio" name="priority4" value="1" required>
+                      <label>Low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority4" value="2" required>
+                      <label>Medium-low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority4" value="3" required>
+                      <label>Medium-high</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority4" value="4" required>
+                      <label>High</label></p><br>
+                    </div>
+                  </div>
 
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s6" placeholder=" Group 6 or other" required></p>
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="level6" value="1" required>SL
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="level6" value="2" required>HL
-                  <p>score:
-                  <select class="w3-input w3-padding-16 w3-border" name="score6" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                  </select></p>
-                  <p>priority:
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority6" value="1" required>low
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority6" value="2" required>medium-low
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority6" value="3" required>medium-high
-                  <input class="w3-input w3-padding-16 w3-border" type="radio" name="priority6" value="4" required>high</p><br>
+                  <!--GROUP 5 INPUT-->
+                  <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 5" required></p>
+                  <div class="w3-row-padding">
+                    <div class="w3-third">
+                      <p>Subject Level: </p>
+                      <p><input class="w3-radio" type="radio" name="level5" value="1" required>SL</p>
+                      <p><input class="w3-radio" type="radio" name="level5" value="2" required>HL</p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Score: </p>
+                      <p><select class="w3-select" name="score5" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select></p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Priority: </p>
+                      <p><input class="w3-radio" type="radio" name="priority5" value="1" required>
+                      <label>Low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority5" value="2" required>
+                      <label>Medium-low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority5" value="3" required>
+                      <label>Medium-high</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority5" value="4" required>
+                      <label>High</label></p><br>
+                    </div>
+                  </div>
 
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="time" placeholder="amount of time" required></p>
+                  <!--GROUP 6 INPUT-->
+                  <p><input class="w3-input w3-padding-16 w3-border" type="text" name="s1" placeholder=" Group 6 or other" required></p>
+                  <div class="w3-row-padding">
+                    <div class="w3-third">
+                      <p>Subject Level: </p>
+                      <p><input class="w3-radio" type="radio" name="level6" value="1" required>SL</p>
+                      <p><input class="w3-radio" type="radio" name="level6" value="2" required>HL</p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Score: </p>
+                      <p><select class="w3-select" name="score6" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select></p>
+                    </div>
+                    <div class="w3-third">
+                      <p>Priority: </p>
+                      <p><input class="w3-radio" type="radio" name="priority6" value="1" required>
+                      <label>Low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority6" value="2" required>
+                      <label>Medium-low</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority6" value="3" required>
+                      <label>Medium-high</label></p>
+                      <p><input class="w3-radio" type="radio" name="priority6" value="4" required>
+                      <label>High</label></p><br>
+                    </div>
+                  </div>
+                <br>
+                <p>Type the total amount of <b>hours</b> per day you set aside for studying (aside from assignments) (eg. 1, 2, 3, ...)</p>
+                <p><input class="w3-input w3-padding-16 w3-border" type="text" name="time" placeholder="Amount of time" required></p>
                 <p><button class="w3-button w3-black" type="submit">Finish Setup</button></p>
             </form>
           </div>
