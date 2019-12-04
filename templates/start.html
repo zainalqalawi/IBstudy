@@ -10,19 +10,18 @@
   <body>
 
   <br><br><br><br><br>
-
-    <h1>Welcome to IBstudy</h1>
-    <p>IBstudy is a a program made for students studing the international baccalaureate diploma program</p>
-    <p>IBstudy creates a study schedule made especially for your studying needs.</p>
-    <p>Sign up <a href="{{url_for('signup')}}">here</a> right now! It's quick and easy!</p>
-    <!--LOGIN FORM-->
     <div class="w3-container" style="padding-bottom:32px;">
-        <div class="w3-content" style="max-width:700px">
+      <div class="w3-content" style="max-width:700px">
+          <h1>Welcome to IBstudy</h1>
+          <p>IBstudy is a a program made for students studing the international baccalaureate diploma program</p>
+          <p>IBstudy creates a study schedule made especially for your studying needs.</p>
+          <p>Sign up <a href="{{url_for('signup')}}">here</a> right now! It's quick and easy!</p>
+    <!--LOGIN FORM-->
           <h1> Login </h1>
           <form action="{{ url_for('login') }}" method="post">
               <p><input class="w3-input w3-padding-16 w3-border" type="text" name="username" placeholder="Username"></p>
               <p><input class="w3-input w3-padding-16 w3-border" type="password" name="password" placeholder="Password"></p>
-              <h6>Don't have an account?</h6><a href="{{url_for('signup')}}">Sign Up</a>
+              <h6>Don't have an account? <a href="{{url_for('signup')}}">Sign Up</a></h6>
               <br>
               <p><button class="w3-button w3-black" type="submit">Login</button></p>
           </form>
