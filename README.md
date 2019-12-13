@@ -29,4 +29,4 @@ python3 app.py
 
 ### 3. Heroku
 
-- will be uploaded to heroku "Link soon"
+- LINK: ibstudy.herokuapp.com
