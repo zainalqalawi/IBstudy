@@ -26,7 +26,3 @@ then run the app,
 ```
 python3 app.py
 ```
-
-### 3. Heroku
-
-- LINK: ibstudy.herokuapp.com
